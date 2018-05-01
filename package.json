@@ -1,0 +1,46 @@
+{
+  "name": "jw-keyboard",
+  "version": "0.0.1",
+  "description": "An instance class which hooks into keyup and keydown, and keeps track of all the key pressed.",
+  "author": "john wong <johnwongwwc@gmail.com>",
+  "keywords": [
+    "keyboard"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WaiChungWong/jw-keyboard.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.7.2"
+  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib --copy-files"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "semi": 2,
+      "no-empty": 0
+    }
+  }
+}
