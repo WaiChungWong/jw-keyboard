@@ -1,2 +1,5 @@
 # Dependency directories
 node_modules
+
+# Built css files in development
+src/**/*.css

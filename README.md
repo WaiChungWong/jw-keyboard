@@ -20,6 +20,29 @@ An instance class which hooks into keyup and keydown, and keeps track of all the
 
 [![NPM](https://nodei.co/npm/jw-keyboard.png)](https://nodei.co/npm/jw-keyboard)
 
+## Methods
+
+| Method                    | Description                                                              |
+| ------------------------- | ------------------------------------------------------------------------ |
+| `attach`                  | append the keyboard to the a DOM element and event functions to it.      |
+| `detach`                  | disengage the keyboard from DOM element and event functions from it.     |
+| `setPreventDefault`       | toggle value for keyboard prevent default on all events.                 |
+| `setPreventHoldDownEvent` | toggle value for keyboard skipping further key down events.              |
+| `onKeyDown`               | bind an event handler to the key down event. Returns a method to unbind. |
+| `clearKeyDown`            | unbind all event handlers from the key down event.                       |
+| `onKeyUp`                 | bind an event handler to the key up event. Returns a method to unbind.   |
+| `clearKeyUp`              | unbind all event handlers from the key up event.                         |
+| `hasKeyPressed`           | check if a given keyCode has been pressed.                               |
+| `getLastKeyPressed`       | get the last keyCode that has been pressed.                              |
+
+## Handler Event
+
+On handling the event, the same event object as the one from `addEventListener` will be passed as a parameter, with an additional `keyboard` object, which holds the following properties:
+
+| Prop              | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| `keyCodesPressed` | the list of key codes of the keys that has been pressed. |
+
 ## Usage
 
 ```javascript
@@ -39,38 +62,31 @@ keyboard.attach(container);
 keyboard.detach();
 
 /** Toggle value for keyboard prevent default on all events. */
-keyboard.setPreventDefault(preventDefault);
+keyboard.setPreventDefault(false);
 
 /** Toggle value for keyboard skipping further key down events. */
-keyboard.setPreventHoldDownEvent(preventHoldDownEvent);
-
-let keyDownHandler = event => { ... };
+keyboard.setPreventHoldDownEvent(false);
 
 /** Bind an event handler to the key down event. */
-keyboard.onKeyDown(keyDownHandler);
+let removeKeyDown = keyboard.onKeyDown(event => { ... });
 
 /** Unbind an event handler to the key down event. */
-keyboard.removeKeyDown(keyDownHandler);
+removeKeyDown();
 
 /** Unbind all event handlers from the key down event. */
 keyboard.clearKeyDown();
 
-let keyUpHandler = event => { ... };
-
 /** Bind an event handler to the key up event. */
-keyboard.onKeyUp(keyUpHandler);
+let removeKeyUp = keyboard.onKeyUp(event => { ... });
 
 /** Unbind an event handler to the key up event. */
-keyboard.removeKeyUp(keyUpHandler);
+removeKeyUp();
 
 /** Unbind all event handlers from the key up event. */
 keyboard.clearKeyUp();
 
-/** Checks if a given keyCode has been pressed. */
+/** Check if a given keyCode has been pressed. */
 keyboard.hasKeyPressed(keyCode);
-
-/** You can use key constants as keyCodes e.g.: */
-keyboard.hasKeyPressed(Keys.ENTER);
 
 /** Get the last keyCode that has been pressed. */
 keyboard.getLastKeyPressed();
