@@ -1,6 +1,6 @@
 {
   "name": "jw-keyboard",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An instance class which hooks into keyup and keydown, and keeps track of all the key pressed.",
   "author": "john wong <johnwongwwc@gmail.com>",
   "homepage": "http://https://waichungwong.github.io/jw-keyboard/build",

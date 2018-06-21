@@ -30,6 +30,7 @@ class Keyboard {
     /* Add bindings to all event methods to secure scoping. */
     this._keyDown = this._keyDown.bind(this);
     this._keyUp = this._keyUp.bind(this);
+    this._blur = this._blur.bind(this);
 
     /* Append the keyboard to the container if given */
     if (container) {
@@ -110,6 +111,22 @@ class Keyboard {
     this._fireEvent(this.upEvents, event);
   }
 
+  /** When the attached container lost focus. */
+  _blur(event) {
+    /* Put keyboard as a reference in the event. */
+    event.keyboard = this;
+
+    /* Skip the default behaviours upon this event. */
+    if (this.preventDefault === true) {
+      event.preventDefault();
+    }
+
+    this.keyCodesPressed = [];
+
+    /* Perform action for up event. */
+    this._fireEvent(this.upEvents, event);
+  }
+
   /** Append the keyboard to the a DOM element and event handlers to it. */
   attach(element) {
     if (element.tagName !== "INPUT" && element.tabIndex < 0) {
@@ -122,6 +139,7 @@ class Keyboard {
     /* Engage the essential keyboard events to each corresponding handler. */
     element.addEventListener("keydown", this._keyDown, eventOptions);
     element.addEventListener("keyup", this._keyUp, eventOptions);
+    element.addEventListener("blur", this._blur, eventOptions);
   }
 
   /** Detach the keyboard from DOM element and event handlers from it. */
@@ -132,6 +150,7 @@ class Keyboard {
 
       element.removeEventListener("keydown", this._keyDown, eventOptions);
       element.removeEventListener("keyup", this._keyUp, eventOptions);
+      element.removeEventListener("blur", this._blur, eventOptions);
 
       if (element.tagName !== "INPUT" && element.tabIndex < 0) {
         element.removeAttribute("tabIndex");
