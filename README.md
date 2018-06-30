@@ -16,24 +16,26 @@ An instance class which hooks into keyup and keydown, and keeps track of all the
 [download-image]: https://img.shields.io/npm/dm/jw-keyboard.svg
 [download-url]: https://npmjs.org/package/jw-keyboard
 
+[Demo](http://waichungwong.github.io/jw-keyboard/build)
+
 ## install
 
 [![NPM](https://nodei.co/npm/jw-keyboard.png)](https://nodei.co/npm/jw-keyboard)
 
 ## Methods
 
-| Method                    | Description                                                              |
-| ------------------------- | ------------------------------------------------------------------------ |
-| `attach`                  | append the keyboard to the a DOM element and event functions to it.      |
-| `detach`                  | disengage the keyboard from DOM element and event functions from it.     |
-| `setPreventDefault`       | toggle value for keyboard prevent default on all events.                 |
-| `setPreventHoldDownEvent` | toggle value for keyboard skipping further key down events.              |
-| `onKeyDown`               | bind an event handler to the key down event. Returns a method to unbind. |
-| `clearKeyDown`            | unbind all event handlers from the key down event.                       |
-| `onKeyUp`                 | bind an event handler to the key up event. Returns a method to unbind.   |
-| `clearKeyUp`              | unbind all event handlers from the key up event.                         |
-| `hasKeyPressed`           | check if a given keyCode has been pressed.                               |
-| `getLastKeyPressed`       | get the last keyCode that has been pressed.                              |
+| Method                    | Parameters                 | Description                                                              |
+| ------------------------- | -------------------------- | ------------------------------------------------------------------------ |
+| `attach`                  | `element`: DOM element     | append the keyboard to the a DOM element and event functions to it.      |
+| `detach`                  |                            | disengage the keyboard from DOM element and event functions from it.     |
+| `setPreventDefault`       | `preventDefault`: boolean  | toggle value for keyboard prevent default on all events.                 |
+| `setPreventHoldDownEvent` | `preventHoldDown`: boolean | toggle value for keyboard skipping further key down events.              |
+| `onKeyDown`               | `handler`: function        | bind an event handler to the key down event. Returns a method to unbind. |
+| `clearKeyDown`            |                            | unbind all event handlers from the key down event.                       |
+| `onKeyUp`                 | `handler`: function        | bind an event handler to the key up event. Returns a method to unbind.   |
+| `clearKeyUp`              |                            | unbind all event handlers from the key up event.                         |
+| `hasKeyPressed`           |                            | check if a given keyCode has been pressed.                               |
+| `getLastKeyPressed`       |                            | get the last keyCode that has been pressed.                              |
 
 ## Handler Event
 
