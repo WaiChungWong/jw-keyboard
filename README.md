@@ -1,6 +1,6 @@
 # jw-keyboard
 
-An instance class which hooks into keyup and keydown, and keeps track of all the key pressed.
+An instance class which hooks into keyup and keydown, and keeps track of all the keys pressed.
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
