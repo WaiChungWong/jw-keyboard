@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
-import Keyboard from "./module";
+import Keyboard, { KeyCodes } from "./module";
 
 import "./style.css";
 
@@ -38,7 +38,7 @@ class Demo extends Component {
         <div className="title">Press any keys to get the keycode</div>
         {keyCodesPressed.map(key => (
           <div key={key} className="key">
-            {key}
+            {KeyCodes[key]}
           </div>
         ))}
       </div>

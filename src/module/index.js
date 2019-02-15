@@ -23,7 +23,7 @@ class Keyboard {
     this.keyCodesPressed = [];
 
     /* The list of listeners this keyboard is appended to.
-		 * Each keyboard event will trigger the corresponding method of each listeners. */
+     * Each keyboard event will trigger the corresponding method of each listeners. */
     this.downEvents = [];
     this.upEvents = [];
 
@@ -214,7 +214,7 @@ class Keyboard {
   }
 }
 
-/* Introduce keycodes. */
+/* Introduce key name to key codes mapping. */
 export const Keys = {
   BACKSPACE_DELETE: 8,
   TAB: 9,
@@ -222,6 +222,7 @@ export const Keys = {
   SHIFT: 16,
   CTRL: 17,
   ALT: 18,
+  CAPSLOCK: 20,
   ESCAPE: 27,
   SPACE_BAR: 32,
   LEFT: 37,
@@ -238,6 +239,7 @@ export const Keys = {
   7: 55,
   8: 56,
   9: 57,
+  SEMICOLON_FIREFOX: 59,
   A: 65,
   B: 66,
   C: 67,
@@ -264,6 +266,8 @@ export const Keys = {
   X: 88,
   Y: 89,
   Z: 90,
+  META_LEFT: 91,
+  META_RIGHT: 93,
   NUMPAD_0: 96,
   NUMPAD_1: 97,
   NUMPAD_2: 98,
@@ -279,11 +283,101 @@ export const Keys = {
   NUMPAD_SUBTRACT: 109,
   NUMPAD_DECIMAL_POINT: 110,
   NUMPAD_DIVIDE: 111,
+  SEMICOLON: 186,
   EQUAL: 187,
+  COMMA: 188,
   MINUS: 189,
   PERIOD: 190,
-  FORWARD_SLASH: 191,
-  BACK_SLASH: 220
+  SLASH: 191,
+  BACK_QUOTE: 192,
+  BRACKET_LEFT: 219,
+  BACK_SLASH: 220,
+  BRACKET_RIGHT: 221,
+  QUOTE: 222,
+  META_FIREFOX: 224
+};
+
+/* Introduce key codes to key name mapping. */
+export const KeyCodes = {
+  8: "BACKSPACE/DELETE",
+  9: "TAB",
+  13: "ENTER",
+  16: "SHIFT",
+  17: "CTRL",
+  18: "ALT",
+  20: "CAPSLOCK",
+  27: "ESCAPE",
+  32: "SPACE BAR",
+  37: "LEFT",
+  38: "UP",
+  39: "RIGHT",
+  40: "DOWN",
+  48: "0",
+  49: "1",
+  50: "2",
+  51: "3",
+  52: "4",
+  53: "5",
+  54: "6",
+  55: "7",
+  56: "8",
+  57: "9",
+  59: "SEMICOLON (FIREFOX)",
+  65: "A",
+  66: "B",
+  67: "C",
+  68: "D",
+  69: "E",
+  70: "F",
+  71: "G",
+  72: "H",
+  73: "I",
+  74: "J",
+  75: "K",
+  76: "L",
+  77: "M",
+  78: "N",
+  79: "O",
+  80: "P",
+  81: "Q",
+  82: "R",
+  83: "S",
+  84: "T",
+  85: "U",
+  86: "V",
+  87: "W",
+  88: "X",
+  89: "Y",
+  90: "Z",
+  91: "META LEFT",
+  93: "META RIGHT",
+  96: "NUMPAD 0",
+  97: "NUMPAD 1",
+  98: "NUMPAD 2",
+  99: "NUMPAD 3",
+  100: "NUMPAD 4",
+  101: "NUMPAD 5",
+  102: "NUMPAD 6",
+  103: "NUMPAD 7",
+  104: "NUMPAD 8",
+  105: "NUMPAD 9",
+  106: "NUMPAD MULTIPLY",
+  107: "NUMPAD ADD",
+  109: "NUMPAD SUBTRACT",
+  110: "NUMPAD DECIMAL POINT",
+  111: "NUMPAD DIVIDE",
+  186: "SEMICOLON",
+  187: "EQUAL",
+  188: "COMMA",
+  189: "SUBTRACT",
+  190: "PERIOD",
+  191: "SLASH",
+  192: "BACK QUOTE",
+  219: "BRACKET LEFT",
+  221: "BRACKET RIGHT",
+  220: "BACK SLASH",
+  222: "QUOTE",
+  224: "META (FIREFOX)"
 };
 
 export default Keyboard;

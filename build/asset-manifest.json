@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.b483d947.css",
-  "main.css.map": "static/css/main.b483d947.css.map",
-  "main.js": "static/js/main.2d9425c8.js",
-  "main.js.map": "static/js/main.2d9425c8.js.map"
+  "main.css": "/jw-keyboard/build/static/css/main.342d06c7.chunk.css",
+  "main.js": "/jw-keyboard/build/static/js/main.378da308.chunk.js",
+  "main.js.map": "/jw-keyboard/build/static/js/main.378da308.chunk.js.map",
+  "runtime~main.js": "/jw-keyboard/build/static/js/runtime~main.17407aee.js",
+  "runtime~main.js.map": "/jw-keyboard/build/static/js/runtime~main.17407aee.js.map",
+  "static/js/2.506c731d.chunk.js": "/jw-keyboard/build/static/js/2.506c731d.chunk.js",
+  "static/js/2.506c731d.chunk.js.map": "/jw-keyboard/build/static/js/2.506c731d.chunk.js.map",
+  "index.html": "/jw-keyboard/build/index.html",
+  "precache-manifest.f5e5dcbb39823d316f94083cfa5606f1.js": "/jw-keyboard/build/precache-manifest.f5e5dcbb39823d316f94083cfa5606f1.js",
+  "service-worker.js": "/jw-keyboard/build/service-worker.js",
+  "static/css/main.342d06c7.chunk.css.map": "/jw-keyboard/build/static/css/main.342d06c7.chunk.css.map"
 }
